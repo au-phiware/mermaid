@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Mermaid Quick Test Page</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=" />
+    <style>
+      div.mermaid {
+        /* font-family: 'trebuchet ms', verdana, arial; */
+        font-family: 'Courier New', Courier, monospace !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Communication diagram demos</h1>
+    <pre class="mermaid">
+    communicationDiagram
+
+      1.      Alice-->Bob:   Authentication Request
+      2a.     Bob  -->Alice: Authentication Response
+      2b.     Bob  -->Alice: Another authentication Response
+      2b. 1.  Alice-->Alice: Some text
+
+    </pre>
+
+    <script type="module">
+      import mermaid from './mermaid.esm.mjs';
+      mermaid.initialize({
+        theme: 'base',
+        // themeCSS: '.node rect { fill: red; }',
+        logLevel: 'debug',
+        securityLevel: 'loose',
+        flowchart: { curve: 'basis' },
+        gantt: { axisFormat: '%m/%d/%Y' },
+      });
+    </script>
+  </body>
+</html>

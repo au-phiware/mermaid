@@ -273,6 +273,300 @@ const config: Partial<MermaidConfig> = {
   },
 
   /** The object containing configurations specific for sequence diagrams */
+  communication: {
+    hideUnusedParticipants: false,
+
+    /**
+     * | Parameter      | Description                                          | Type    | Required | Values             |
+     * | -------------- | ---------------------------------------------------- | ------- | -------- | ------------------ |
+     * | diagramMarginX | Margin to the right and left of the sequence diagram | Integer | Required | Any Positive Value |
+     *
+     * **Notes:** Default value: 50
+     */
+    diagramMarginX: 50,
+
+    /**
+     * | Parameter      | Description                                       | Type    | Required | Values             |
+     * | -------------- | ------------------------------------------------- | ------- | -------- | ------------------ |
+     * | diagramMarginY | Margin to the over and under the sequence diagram | Integer | Required | Any Positive Value |
+     *
+     * **Notes:** Default value: 10
+     */
+    diagramMarginY: 10,
+
+    /**
+     * | Parameter   | Description           | Type    | Required | Values             |
+     * | ----------- | --------------------- | ------- | -------- | ------------------ |
+     * | actorMargin | Margin between actors | Integer | Required | Any Positive Value |
+     *
+     * **Notes:** Default value: 50
+     */
+    actorMargin: 50,
+
+    /**
+     * | Parameter | Description          | Type    | Required | Values             |
+     * | --------- | -------------------- | ------- | -------- | ------------------ |
+     * | width     | Width of actor boxes | Integer | Required | Any Positive Value |
+     *
+     * **Notes:** Default value: 150
+     */
+    width: 150,
+
+    /**
+     * | Parameter | Description           | Type    | Required | Values             |
+     * | --------- | --------------------- | ------- | -------- | ------------------ |
+     * | height    | Height of actor boxes | Integer | Required | Any Positive Value |
+     *
+     * **Notes:** Default value: 65
+     */
+    height: 65,
+
+    /**
+     * | Parameter | Description              | Type    | Required | Values             |
+     * | --------- | ------------------------ | ------- | -------- | ------------------ |
+     * | boxMargin | Margin around loop boxes | Integer | Required | Any Positive Value |
+     *
+     * **Notes:** Default value: 10
+     */
+    boxMargin: 10,
+
+    /**
+     * | Parameter     | Description                                  | Type    | Required | Values             |
+     * | ------------- | -------------------------------------------- | ------- | -------- | ------------------ |
+     * | boxTextMargin | Margin around the text in loop/alt/opt boxes | Integer | Required | Any Positive Value |
+     *
+     * **Notes:** Default value: 5
+     */
+    boxTextMargin: 5,
+
+    /**
+     * | Parameter  | Description         | Type    | Required | Values             |
+     * | ---------- | ------------------- | ------- | -------- | ------------------ |
+     * | noteMargin | margin around notes | Integer | Required | Any Positive Value |
+     *
+     * **Notes:** Default value: 10
+     */
+    noteMargin: 10,
+
+    /**
+     * | Parameter     | Description            | Type    | Required | Values             |
+     * | ------------- | ---------------------- | ------- | -------- | ------------------ |
+     * | messageMargin | Space between messages | Integer | Required | Any Positive Value |
+     *
+     * **Notes:** Default value: 35
+     */
+    messageMargin: 35,
+
+    /**
+     * | Parameter    | Description                 | Type   | Required | Values                    |
+     * | ------------ | --------------------------- | ------ | -------- | ------------------------- |
+     * | messageAlign | Multiline message alignment | string | Required | 'left', 'center', 'right' |
+     *
+     * **Notes:** Default value: 'center'
+     */
+    messageAlign: 'center',
+
+    /**
+     * | Parameter  | Description                                                             | Type    | Required | Values      |
+     * | ---------- | ----------------------------------------------------------------------- | ------- | -------- | ----------- |
+     * | forceMenus | forces actor popup menus to always be visible (to support E2E testing). | Boolean | Required | True, False |
+     *
+     * **Notes:**
+     *
+     * Default value: false.
+     */
+    forceMenus: false,
+
+    /**
+     * | Parameter   | Description | Type    | Required | Values      |
+     * | ----------- | ----------- | ------- | -------- | ----------- |
+     * | useMaxWidth | See Notes   | boolean | Required | true, false |
+     *
+     * **Notes:** When this flag is set to true, the height and width is set to 100% and is then
+     * scaling with the available space. If set to false, the absolute space required is used.
+     *
+     * Default value: true
+     */
+    useMaxWidth: true,
+
+    /**
+     * | Parameter   | Description                          | Type    | Required | Values      |
+     * | ----------- | ------------------------------------ | ------- | -------- | ----------- |
+     * | rightAngles | display curve arrows as right angles | boolean | Required | true, false |
+     *
+     * **Notes:**
+     *
+     * This will display arrows that start and begin at the same node as right angles, rather than a
+     * curve
+     *
+     * Default value: false
+     */
+    rightAngles: false,
+
+    /**
+     * | Parameter     | Description                                        | Type    | Required | Values             |
+     * | ------------- | -------------------------------------------------- | ------- | -------- | ------------------ |
+     * | actorFontSize | This sets the font size of the actor's description | Integer | Require  | Any Positive Value |
+     *
+     * **Notes:** **Default value 14**..
+     */
+    actorFontSize: 14,
+
+    /**
+     * | Parameter       | Description                                          | Type   | Required | Values                      |
+     * | --------------- | ---------------------------------------------------- | ------ | -------- | --------------------------- |
+     * | actorFontFamily | This sets the font family of the actor's description | string | Required | Any Possible CSS FontFamily |
+     *
+     * **Notes:** Default value: "'Open Sans", sans-serif'
+     */
+    actorFontFamily: '"Open Sans", sans-serif',
+
+    /**
+     * This sets the font weight of the actor's description
+     *
+     * **Notes:** Default value: 400.
+     */
+    actorFontWeight: 400,
+
+    /**
+     * | Parameter    | Description                                     | Type    | Required | Values             |
+     * | ------------ | ----------------------------------------------- | ------- | -------- | ------------------ |
+     * | noteFontSize | This sets the font size of actor-attached notes | Integer | Required | Any Positive Value |
+     *
+     * **Notes:** Default value: 14
+     */
+    noteFontSize: 14,
+
+    /**
+     * | Parameter      | Description                                        | Type   | Required | Values                      |
+     * | -------------- | -------------------------------------------------- | ------ | -------- | --------------------------- |
+     * | noteFontFamily | This sets the font family of actor-attached notes. | string | Required | Any Possible CSS FontFamily |
+     *
+     * **Notes:** Default value: ''"trebuchet ms", verdana, arial, sans-serif'
+     */
+    noteFontFamily: '"trebuchet ms", verdana, arial, sans-serif',
+
+    /**
+     * This sets the font weight of the note's description
+     *
+     * **Notes:** Default value: 400
+     */
+    noteFontWeight: 400,
+
+    /**
+     * | Parameter | Description                                          | Type   | Required | Values                    |
+     * | --------- | ---------------------------------------------------- | ------ | -------- | ------------------------- |
+     * | noteAlign | This sets the text alignment of actor-attached notes | string | required | 'left', 'center', 'right' |
+     *
+     * **Notes:** Default value: 'center'
+     */
+    noteAlign: 'center',
+
+    /**
+     * | Parameter       | Description                               | Type    | Required | Values              |
+     * | --------------- | ----------------------------------------- | ------- | -------- | ------------------- |
+     * | messageFontSize | This sets the font size of actor messages | Integer | Required | Any Positive Number |
+     *
+     * **Notes:** Default value: 16
+     */
+    messageFontSize: 16,
+
+    /**
+     * | Parameter         | Description                                 | Type   | Required | Values                      |
+     * | ----------------- | ------------------------------------------- | ------ | -------- | --------------------------- |
+     * | messageFontFamily | This sets the font family of actor messages | string | Required | Any Possible CSS FontFamily |
+     *
+     * **Notes:** Default value: '"trebuchet ms", verdana, arial, sans-serif'
+     */
+    messageFontFamily: '"trebuchet ms", verdana, arial, sans-serif',
+
+    /**
+     * This sets the font weight of the message's description
+     *
+     * **Notes:** Default value: 400.
+     */
+    messageFontWeight: 400,
+
+    /**
+     * This sets the auto-wrap state for the diagram
+     *
+     * **Notes:** Default value: false.
+     */
+    wrap: false,
+
+    /**
+     * This sets the auto-wrap padding for the diagram (sides only)
+     *
+     * **Notes:** Default value: 0.
+     */
+    wrapPadding: 10,
+
+    /**
+     * This sets the width of the loop-box (loop, alt, opt, par)
+     *
+     * **Notes:** Default value: 50.
+     */
+    labelBoxWidth: 50,
+
+    /**
+     * This sets the height of the loop-box (loop, alt, opt, par)
+     *
+     * **Notes:** Default value: 20.
+     */
+    labelBoxHeight: 20,
+
+    /**
+     * | Parameter   | Description                                         | Type    | Required | Values              |
+     * | ----------- | --------------------------------------------------- | ------- | -------- | ------------------- |
+     * | nodeSpacing | Defines the spacing between nodes on the same level | Integer | Required | Any positive Number |
+     *
+     * **Notes:**
+     *
+     * Pertains to horizontal spacing for TB (top to bottom) or BT (bottom to top) graphs, and the
+     * vertical spacing for LR as well as RL graphs.**
+     *
+     * Default value: 50
+     */
+    nodeSpacing: 50,
+
+    /**
+     * | Parameter   | Description                                           | Type    | Required | Values              |
+     * | ----------- | ----------------------------------------------------- | ------- | -------- | ------------------- |
+     * | rankSpacing | Defines the spacing between nodes on different levels | Integer | Required | Any Positive Number |
+     *
+     * **Notes**:
+     *
+     * Pertains to vertical spacing for TB (top to bottom) or BT (bottom to top), and the horizontal
+     * spacing for LR as well as RL graphs.
+     *
+     * Default value 50
+     */
+    rankSpacing: 50,
+
+    messageFont: function () {
+      return {
+        fontFamily: this.messageFontFamily,
+        fontSize: this.messageFontSize,
+        fontWeight: this.messageFontWeight,
+      };
+    },
+    noteFont: function () {
+      return {
+        fontFamily: this.noteFontFamily,
+        fontSize: this.noteFontSize,
+        fontWeight: this.noteFontWeight,
+      };
+    },
+    actorFont: function () {
+      return {
+        fontFamily: this.actorFontFamily,
+        fontSize: this.actorFontSize,
+        fontWeight: this.actorFontWeight,
+      };
+    },
+  },
+
+  /** The object containing configurations specific for sequence diagrams */
   sequence: {
     hideUnusedParticipants: false,
     /**

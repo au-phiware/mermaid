@@ -19,6 +19,7 @@ export interface MermaidConfig {
   deterministicIds?: boolean;
   deterministicIDSeed?: string;
   flowchart?: FlowchartDiagramConfig;
+  communication?: CommunicationDiagramConfig;
   sequence?: SequenceDiagramConfig;
   gantt?: GanttDiagramConfig;
   journey?: JourneyDiagramConfig;
@@ -336,6 +337,42 @@ export interface GanttDiagramConfig extends BaseDiagramConfig {
   tickInterval?: string;
   topAxis?: boolean;
   displayMode?: string;
+}
+
+export interface CommunicationDiagramConfig extends BaseDiagramConfig {
+  arrowMarkerAbsolute?: boolean;
+  hideUnusedParticipants?: boolean;
+  diagramMarginX?: number;
+  diagramMarginY?: number;
+  actorMargin?: number;
+  width?: number;
+  height?: number;
+  boxMargin?: number;
+  boxTextMargin?: number;
+  noteMargin?: number;
+  messageMargin?: number;
+  messageAlign?: string;
+  forceMenus?: boolean;
+  rightAngles?: boolean;
+  actorFontSize?: string | number;
+  actorFontFamily?: string;
+  actorFontWeight?: string | number;
+  noteFontSize?: string | number;
+  noteFontFamily?: string;
+  noteFontWeight?: string | number;
+  noteAlign?: string;
+  messageFontSize?: string | number;
+  messageFontFamily?: string;
+  messageFontWeight?: string | number;
+  nodeSpacing?: number;
+  rankSpacing?: number;
+  wrap?: boolean;
+  wrapPadding?: number;
+  labelBoxWidth?: number;
+  labelBoxHeight?: number;
+  messageFont?: FontCalculator;
+  noteFont?: FontCalculator;
+  actorFont?: FontCalculator;
 }
 
 export interface SequenceDiagramConfig extends BaseDiagramConfig {

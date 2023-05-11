@@ -7,6 +7,7 @@ import gantt from '../diagrams/gantt/ganttDetector.js';
 import info from '../diagrams/info/infoDetector.js';
 import pie from '../diagrams/pie/pieDetector.js';
 import requirement from '../diagrams/requirement/requirementDetector.js';
+import communication from '../diagrams/communication/communicationDetector.js';
 import sequence from '../diagrams/sequence/sequenceDetector.js';
 import classDiagram from '../diagrams/class/classDetector.js';
 import classDiagramV2 from '../diagrams/class/classDetector-V2.js';
@@ -68,6 +69,7 @@ export const addDiagrams = () => {
     info,
     pie,
     requirement,
+    communication,
     sequence,
     flowchartElk,
     flowchartV2,
